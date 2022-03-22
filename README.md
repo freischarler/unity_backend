@@ -13,3 +13,5 @@ FOR QUERIE'S
 
 curl http://localhost:9000/api/v1/users/ \
     -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MX0.Qi0Tc-jTChzascHaZhl0e6rRaCvAS6OJ8RLsI8Y-R78'
+
+heroku logs --tail
