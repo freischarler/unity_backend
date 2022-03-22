@@ -10,8 +10,8 @@ import (
 )
 
 func main() {
-	//port := os.Getenv("PORT")
-	serv, err := server.New("8080")
+	port := os.Getenv("PORT")
+	serv, err := server.New(port)
 	if err != nil {
 		log.Fatal(err)
 	}
