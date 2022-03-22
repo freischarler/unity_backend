@@ -14,7 +14,8 @@ type Map map[string]interface{}
 func JSON(w http.ResponseWriter, r *http.Request, statusCode int, data interface{}) error {
 	if data == nil {
 		w.Header().Set("Content-Type", "application/json; charset=utf-8")
-		w.Header().Set("Access-Control-Allow-Origin", "*") //CORS problem fix
+		w.Header().Set("Access-Control-Allow-Origin", "*")                                //CORS problem fix
+		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE") //CORS problem fix
 		w.WriteHeader(statusCode)
 		return nil
 	}
@@ -25,7 +26,8 @@ func JSON(w http.ResponseWriter, r *http.Request, statusCode int, data interface
 	}
 
 	w.Header().Set("Content-Type", "application/json; charset=utf-8")
-	w.Header().Set("Access-Control-Allow-Origin", "*") //CORS problem fix
+	w.Header().Set("Access-Control-Allow-Origin", "*")                                //CORS problem fix
+	w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE") //CORS problem fix
 	w.WriteHeader(statusCode)
 	w.Write(j)
 	return nil
