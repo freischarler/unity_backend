@@ -13,11 +13,11 @@ import (
 func getConnection() (*sql.DB, error) {
 
 	psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=require",
-		"ec2-3-225-41-234.compute-1.amazonaws.com",
+		"ec2-52-201-195-11.compute-1.amazonaws.com",
 		5432,
-		"pqonavdfbwcoln",
-		"c129830082ef74ba9c3cafdca381457105f64a83cfc7e8310d7290766d67533b",
-		"d6kov15budmlki")
+		"xlzgnrpqsxzsoy",
+		"35db71b3fbd0ff3be8561318ecc7c0f83b7fd934108b67c759db89246bf572b0",
+		"d5nd16i4s66ahm")
 
 	/*psqlInfo := fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable",
 	"127.0.0.1",
