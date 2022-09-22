@@ -16,8 +16,8 @@ type PostRepository struct {
 
 // GetAll returns all posts.
 func (pr *PostRepository) GetAll(ctx context.Context) ([]post.Post, error) {
-	/*q := `
-	SELECT id, body, user_id, created_at, updated_at
+	q := `
+	SELECT id, firstname, lastname, email, phone, message , created_at,
 		FROM posts;
 	`
 
@@ -31,11 +31,10 @@ func (pr *PostRepository) GetAll(ctx context.Context) ([]post.Post, error) {
 	var posts []post.Post
 	for rows.Next() {
 		var p post.Post
-		rows.Scan(&p.ID, &p.Body, &p.UserID, &p.CreatedAt, &p.UpdatedAt)
+		rows.Scan(&p.ID, &p.Firstname, &p.Lastname, &p.Email, &p, p.Phone, &p.Message, &p.CreatedAt)
 		posts = append(posts, p)
 	}
-	*/
-	var posts []post.Post
+
 	return posts, nil
 }
 
