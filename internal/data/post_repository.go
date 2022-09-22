@@ -18,7 +18,7 @@ type PostRepository struct {
 func (pr *PostRepository) GetAll(ctx context.Context) ([]post.Post, error) {
 	q := `
 	SELECT id, firstname, lastname, email, phone, message , created_at,
-		FROM posts;
+		FROM messages;
 	`
 
 	rows, err := pr.Data.DB.QueryContext(ctx, q)
