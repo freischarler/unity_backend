@@ -17,7 +17,7 @@ type PostRepository struct {
 // GetAll returns all posts.
 func (pr *PostRepository) GetAll(ctx context.Context) ([]post.Post, error) {
 	q := `
-	SELECT id, firstname, lastname, email, phone, message , created_at,
+	SELECT id, firstname, lastname, email, phone, message , created_at
 		FROM messages;
 	`
 
