@@ -31,7 +31,7 @@ func (pr *PostRepository) GetAll(ctx context.Context) ([]post.Post, error) {
 	var posts []post.Post
 	for rows.Next() {
 		var p post.Post
-		rows.Scan(&p.ID, &p.Firstname, &p.Lastname, &p.Email, &p, p.Phone, &p.Message, &p.CreatedAt)
+		rows.Scan(&p.ID, &p.Firstname, &p.Lastname, &p.Email, &p.Phone, &p.Message, &p.CreatedAt)
 		posts = append(posts, p)
 	}
 
