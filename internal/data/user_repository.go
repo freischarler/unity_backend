@@ -17,7 +17,7 @@ type UserRepository struct {
 func (ur *UserRepository) GetAll(ctx context.Context) ([]user.User, error) {
 	q := `
 	SELECT id, username, email, picture,
-		created_at, updated_at
+		authorized, created_at, updated_at
 		FROM users;
 	`
 
@@ -32,7 +32,7 @@ func (ur *UserRepository) GetAll(ctx context.Context) ([]user.User, error) {
 	for rows.Next() {
 		var u user.User
 		rows.Scan(&u.ID, &u.Username,
-			&u.Email, &u.Picture, &u.CreatedAt, &u.UpdatedAt)
+			&u.Email, &u.Picture, &u.Authorized, &u.CreatedAt, &u.UpdatedAt)
 		users = append(users, u)
 	}
 
